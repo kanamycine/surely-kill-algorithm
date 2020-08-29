@@ -1,0 +1,1 @@
+str_ = list(input)
