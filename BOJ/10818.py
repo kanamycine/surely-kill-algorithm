@@ -1,5 +1,0 @@
-tc = int(input())
-input_lst = list(map(int, input().split()))
-max_value = max(input_lst)
-min_value = min(input_lst)
-print('{} {}'.format(min_value, max_value))
