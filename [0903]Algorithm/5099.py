@@ -1,10 +1,17 @@
-tc = int(input())
-for tc in range(1, tc+1):
+for tc in range(1, int(input())+1):
     N, M = map(int, input().split())
-    lst = list(map(int, input().split()))
-    for i in range(M):
-        p = lst.pop(0)
-        lst.append(p)
-    
-    print('#{} {}'.format(tc, lst[0]))
+    pizza = [0] + list(map(int, input().split()))
 
+    oven = [i for i in range(1, N + 1)]
+    pos = N + 1
+
+    while len(oven) > 1:
+        num = oven.pop(0)
+        pizza[num] = pizza[num] // 2
+        if pizza[num]:
+            oven.append(num)
+        else:
+            if pos <= M:
+                oven.append(pos)
+                pos += 1
+    print(oven[0])
